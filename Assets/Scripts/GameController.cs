@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameControler : MonoBehaviour
+public class GameController : MonoBehaviour
 {
     //public static GameControler Instance { get; private set; }
 
@@ -19,20 +19,6 @@ public class GameControler : MonoBehaviour
 
     public int points;
 
-    /*
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-    */
-
     private void GameOver()
     {
         GameOverScreen.setup();
@@ -45,7 +31,10 @@ public class GameControler : MonoBehaviour
 
     private void Start()
     {
-        VictoryTriggerScript = VictoryTrigger.GetComponent<VictoryTrig>();
+        if(VictoryTrigger != null)
+        {
+            VictoryTriggerScript = VictoryTrigger.GetComponent<VictoryTrig>();
+        }
 
         player = GameObject.FindWithTag("Player");
         PlayerScript = player.GetComponent<Player>();
@@ -58,7 +47,12 @@ public class GameControler : MonoBehaviour
 
     private void Update()
     {
-        if(VictoryTriggerScript.VictoryTriggered == true)
+        if (VictoryTriggerScript != null && VictoryTriggerScript.VictoryTriggered == true)
+        {
+            Victory();
+        }
+
+        if (points > 99)
         {
             Victory();
         }

@@ -262,13 +262,13 @@ MonoBehaviour:
   rollforce: 300
   attackRange: 1.25
   knockBack: 0
-  jumpNoise: {fileID: 0}
-  walkNoise: {fileID: 0}
-  rollNoise: {fileID: 0}
-  hurtNoise: {fileID: 0}
-  dieNoise: {fileID: 0}
-  hitNoise: {fileID: 0}
-  soundEffectPlayer: {fileID: 0}
+  jumpNoise: {fileID: 8300000, guid: 7212c07069b704547a2e571a0b26565b, type: 3}
+  walkNoise: {fileID: 8300000, guid: b27446fcf843b624cbfc3bbb43062922, type: 3}
+  rollNoise: {fileID: 8300000, guid: 97a618b0f5217cb4c89a7b7cf279cbf3, type: 3}
+  hurtNoise: {fileID: 8300000, guid: 70a0cc23e1cabad4a95632294c673f7e, type: 3}
+  dieNoise: {fileID: 8300000, guid: e628f8faaf1177a489c36437e1defc43, type: 3}
+  hitNoise: {fileID: 8300000, guid: e2b21c5e7f7b749099634387d4ed5be7, type: 3}
+  soundEffectPlayer: {fileID: 3173145996185037475}
 --- !u!70 &1690181861
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

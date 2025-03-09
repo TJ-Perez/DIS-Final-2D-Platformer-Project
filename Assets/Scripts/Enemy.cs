@@ -29,10 +29,11 @@ public class Enemy : MonoBehaviour
 
     private bool isAttackingTimer;
 
-    [SerializeField] private GameControler gameControler;
+    private GameController gameController;
 
     void Start()
     {
+        gameController = GameObject.Find("EventSystem").GetComponent<GameController>();
         player = GameObject.FindWithTag("Player");
         playerScript = player.GetComponent<Player>();
         playerAnim = player.GetComponent<Animator>();
@@ -148,7 +149,7 @@ public class Enemy : MonoBehaviour
             {
                 if (col.gameObject.tag == "Player")
                 {
-                    Debug.LogError("HIT BY SKELETON");
+                    //Debug.LogError("HIT BY SKELETON");
                     playerScript.hurt(playerToRight);
                 }
             }
@@ -190,7 +191,7 @@ public class Enemy : MonoBehaviour
 
 
             yield return new WaitForSeconds(1.25f);
-            gameControler.addPoint();
+            gameController.addPoint();
             GameObject tmp = Instantiate(bones, gameObject.transform.position, gameObject.transform.rotation);
 
             if (!playerToRight)
