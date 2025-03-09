@@ -9,19 +9,20 @@ public class ScoreBoard : MonoBehaviour
     public Text Valuetxt;
     public Text Timetxt;
 
-    [SerializeField] private GameControler gameControler;
+    private GameController gameController;
 
     // Start is called before the first frame update
     void Start()
     {
-        Valuetxt.text = gameControler.points.ToString();
-        Timetxt.text = gameControler.timePlayed.ToString();
+        gameController = GameObject.Find("EventSystem").GetComponent<GameController>();
+        Valuetxt.text = gameController.points.ToString();
+        Timetxt.text = gameController.timePlayed.ToString();
     }
 
     private void Update()
     {
-        Valuetxt.text = gameControler.points.ToString();
-        Timetxt.text = gameControler.timePlayed.ToString();
+        Valuetxt.text = gameController.points.ToString();
+        Timetxt.text = gameController.timePlayed.ToString();
     }
 
 

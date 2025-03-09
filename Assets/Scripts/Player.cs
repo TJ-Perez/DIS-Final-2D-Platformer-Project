@@ -35,7 +35,6 @@ public class Player : MonoBehaviour
     private bool isGrounded = true;
     private bool isRolling;
     private bool isAttacking;
-    private bool isJumping;
     private bool enabled = true;
     private bool groundCheck1;
     private bool groundCheck2;
@@ -292,7 +291,7 @@ void Update()
         {
             if (enemies.gameObject.tag == "Enemy")
             {
-                Debug.LogError("Take that skelafucker");
+                Debug.LogError("Player hit skelenem(ies)");
 
                 enemies.gameObject.GetComponent<Enemy>().gotHit();
             }

@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Rogue
+  m_text: Dungeon
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6eeae27e2b2efc844b5041e284abb277, type: 2}
   m_sharedMaterial: {fileID: 114576262181845802, guid: 6eeae27e2b2efc844b5041e284abb277, type: 2}

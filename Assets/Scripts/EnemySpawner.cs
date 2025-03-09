@@ -19,11 +19,13 @@ public class EnemySpawner : MonoBehaviour
 
     List<Vector3> eligibleTiles;
 
-    [SerializeField] private GameControler gameControler;
+    [SerializeField] private GameController gameController;
 
     // Start is called before the first frame update
     void Start()
     {
+        gameController = GameObject.Find("EventSystem").GetComponent<GameController>();
+
         tilemap = GetComponent<Tilemap>();
         timer = spawnTimer;
 
@@ -45,9 +47,9 @@ public class EnemySpawner : MonoBehaviour
             timer = spawnTimer;
         }
 
-        if(gameControler.timePlayed > 10)
+        if(gameController.timePlayed > 10)
         {
-            spawnTimer = 4 - (Mathf.Floor(gameControler.timePlayed / 10) * .1f);
+            spawnTimer = 4 - (Mathf.Floor(gameController.timePlayed / 10) * .1f);
         }
     }
 
